@@ -1,0 +1,39 @@
+<div class="home-container">
+
+    <ng-container>
+        <div style="margin: 20px 0px 0px 10px;">
+            <span style="font-size: 26px; font-weight: 600;">Menu</span>
+        </div>
+        <div class="card-container">
+            <div class="card" *ngFor="let item of menu">
+                
+                <div class="img-box">
+                    <img [src]="item.url" width="350px" height="240px" data-selected="true" data-label-id="0">
+                </div>
+                <div class="details-box">
+                    <div>
+                        <span style="font-weight: 600;">{{item.title}}</span>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <label>{{item.price}}</label>
+                        
+                        <button mat-raised-button class="full-width full-height success-background" (click)="addToCart(item)">Add To Cart </button>
+                    </div>
+                    <div style="margin-top: 5px;">
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>{{item.description}}</mat-chip>
+                            <mat-chip>
+                                <img
+                                    src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/972e1cb487b3a5c72c30a6635596f477.svg">
+                                (500+)
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </ng-container>
+</div>

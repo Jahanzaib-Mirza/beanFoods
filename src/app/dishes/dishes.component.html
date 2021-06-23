@@ -6,9 +6,11 @@
         <h1 style="padding: 0px 20px;text-align: center;">Added To Cart</h1>
       </div>
     </div>
-    <div class="model-footer flex-item-center">
-      
-      <button mat-raised-button class="full-width full-height success-background" (click)="goToCheck()">
+    <div class="model-footer" style="display: flex;justify-content: space-between;">
+      <button mat-raised-button class="full-height success-background" style="width: 45%;padding: 5px;" (click)="dismiss()">
+        Continue Shopping 
+      </button>
+      <button mat-raised-button class="full-height success-background" style="width: 45%;padding: 5px;" (click)="goToCheck()">
         Go To Checkout
       </button>
     </div>

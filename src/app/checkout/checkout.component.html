@@ -7,52 +7,81 @@
                     <h2>Thank You</h2>
                     <span>For Choosing Us</span>
                 </div>
-                <div class="button-container">
-                    <div class="button-box">
+                <div class="button-container" style="display: flex;">
+                    <div class="button-box" style="float: left;">
                         <button mat-raised-button class="default-button success-background" style="width: 150px;"
-                            [routerLink]="['/']">
-                            HOME
+                            (click)="order()">
+                            ORDER
                         </button>
                     </div>
+                    
 
                 </div>
-            </div>
-            
-        </div>
-        <div class="right-container-box">
-            <div class="main-box cart-card" style="padding: 0;">
-                <div class="cart-card-header flex-with-space-between padding-horizontaly">
-                    <div class="flex-item-center">
-                        <mat-icon fontSet="material-icons-outlined">work_outline</mat-icon>
-                        <div class="very-small-gap"></div>
-                        <h2>Your Order ({{item.title}})</h2>
+                <div class="data_container product_detail_card">
+                    <div class="clr-row first_row clr-justify-content-center"  style="display: flex;color:rgba(0,0,0,.54);
+                    font-size: 24px;
+                    font-weight: 500;
+                    border-bottom: #000 1px solid;
+                    padding-top:10px;
+                    padding-bottom: 10px;">
+                        <div class="clr-col-md-2 text-center" style="width: 30%;">Your Order</div>
+                        <div class="clr-col-md-2 text-center" style="width: 30%;">Price</div>
+                        <div class="clr-col-md-2 text-center"style="width: 30%;">Description</div>
                     </div>
-                    <mat-icon fontSet="material-icons-outlined">close</mat-icon>
-                </div>
-                <div class="img-box">
-                    <img [src]="item.url" width="100%" height="240px" data-selected="true" data-label-id="0">
-                </div>
-                <div class="cart-card-body" style="max-height: 280px !important;">
-                    <ul>
-                        <li class="flex-with-space-between padding">
-                            <div class="flex-item-center">
+                    <div class="clr-row second_row clr-justify-content-center"  *ngFor="let item of orders" style="display: flex;border-bottom:1px solid #eee;
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                    font-size: 20px;
+                    font-weight: 500;">
+                        <div class="clr-col-md-2 text-center" style="width: 30%;">
+                            {{item.title}}
+                        </div>
+                        <div class="clr-col-md-2 text-center" style="width: 30%;">
+                            {{item.price}}
+                        </div>
+                        <div class="clr-col-md-2 text-center" style="width: 30%;">
+                            {{item.description}}
+                        </div>
+                       
 
-                                <div class="small-gap"></div>
-                                <div class="flex-column">
-                                    <span> {{item.description}} </span>
-                                </div>
-                            </div>
-                            <span> {{item.price}}</span>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
-                <div class="cart-card-footer padding">
-                    <button mat-raised-button class="full-width full-height success-background" (click)="order()">
-                        ORDER
-                    </button>
-                </div>
+
             </div>
-        </div>
+            <!-- <div class="right-container-box">
+                <div class="main-box cart-card" style="padding: 0;">
+                    <div class="cart-card-header flex-with-space-between padding-horizontaly">
+                        <div class="flex-item-center">
+                            <mat-icon fontSet="material-icons-outlined">work_outline</mat-icon>
+                            <div class="very-small-gap"></div>
+                            <h2>Your Order ({{item.title}})</h2>
+                        </div>
+                        <mat-icon fontSet="material-icons-outlined">close</mat-icon>
+                    </div>
+                    <div class="img-box">
+                        <img [src]="item.url" width="100%" height="240px" data-selected="true" data-label-id="0">
+                    </div>
+                    <div class="cart-card-body" style="max-height: 280px !important;">
+                        <ul>
+                            <li class="flex-with-space-between padding">
+                                <div class="flex-item-center">
 
+                                    <div class="small-gap"></div>
+                                    <div class="flex-column">
+                                        <span> {{item.description}} </span>
+                                    </div>
+                                </div>
+                                <span> {{item.price}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cart-card-footer padding">
+                        <button mat-raised-button class="full-width full-height success-background" (click)="order()">
+                            ORDER
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
     </div>
-</div>

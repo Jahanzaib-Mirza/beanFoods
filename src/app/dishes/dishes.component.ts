@@ -28,6 +28,9 @@ export class DishesComponent implements OnInit {
   }
   ngOnInit() {
   }
+  dismiss(){
+    this.dialog.closeAll();
+  }
   
   
 

@@ -10,18 +10,18 @@ import { ConfirmComponent } from '../confirm/confirm.component';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
-item:any;
+orders:any;
 items: Observable<any>;
 
   constructor(public db: AngularFireDatabase,public dialog: MatDialog,) { 
-    this.item = JSON.parse(localStorage.getItem("item"));
-    console.log(this.item);
+    this.orders = JSON.parse(localStorage.getItem("orders"));
+    console.log(this.orders);
     this.items = db.list('items').valueChanges();
 
   };
 
   order() {
-    this.db.list('items').push(this.item);
+    this.db.list('items').push(this.orders);
     localStorage.clear();
     this.addItemDialog();
   }

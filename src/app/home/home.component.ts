@@ -54,16 +54,24 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     
   }
-
+// existing:any
   addToCart(data){
-    console.log(data)
-    localStorage.setItem("item",JSON.stringify(data))
+    // console.log(data)
+    // let di:any = JSON.parse(localStorage.getItem("orders"));
+    // console.log(di);
+    let existing:any = localStorage.getItem("orders");
+    existing = existing ? JSON.parse(existing.split(',')) : [];
+    existing.push(data);
+
+
+    console.log(existing)
+    localStorage.setItem("orders",JSON.stringify(existing))
     this.addItemDialog();
   };
 
   addItemDialog(): void {
     const dialogRef = this.dialog.open(DishesComponent, {
-      width: '250px',
+      width: '550px',
     });
     dialogRef.afterClosed().subscribe(result => {
       // if (result) {
